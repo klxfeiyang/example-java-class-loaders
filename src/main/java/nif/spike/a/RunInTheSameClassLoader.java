@@ -3,13 +3,13 @@ package nif.spike.a;
 public class RunInTheSameClassLoader {
 
 	public static void main(String[] args) throws Exception {
-		newInstanceTimer("instance_1");
-		newInstanceTimer("instance_2");
-		newInstanceTimer("instance_3");
+		Timer a = newInstanceTimer("instance_1");
+		Timer b = newInstanceTimer("instance_2");
+		Timer c = newInstanceTimer("instance_3");
 	}
 
-	private static void newInstanceTimer(String name) {
-		new Timer(name);
+	private static Timer newInstanceTimer(String name) {
+		return new Timer(name);
 
 	}
 
