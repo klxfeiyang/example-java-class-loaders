@@ -9,7 +9,7 @@ In Java a static variable is shared between all instances of the class (which we
 
 ##### Running a class several times,  all instances in the same "java classLoader" (default)
 - All instances will share the same static variable
-
+```shell
 > instance_1: 1
 > instance_2: 2
 > instance_3: 3
@@ -20,10 +20,11 @@ In Java a static variable is shared between all instances of the class (which we
 > instance_2: 8
 > instance_3: 9
 > ...
+```
 
 ##### Each instance in a new "java classLoader"
 - Classes loaded by different classLoader do not share static variables
-
+```shell
 > instance_1: 1
 > instance_2: 1
 > instance_3: 1
@@ -34,4 +35,12 @@ In Java a static variable is shared between all instances of the class (which we
 > instance_2: 3
 > instance_3: 3
 > ...
+```
+
+## How to run the example
+
+First, build the source by running `mvn package`.
+
+Next, run `java -cp target/classes/ nif.spike.a.RunInTheSameClassLoader` or the
+corresponding class name.
 
